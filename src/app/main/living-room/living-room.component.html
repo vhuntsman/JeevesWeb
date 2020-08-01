@@ -1,0 +1,57 @@
+<mat-divider></mat-divider>
+<div class="sub-panel">
+    <div class="sub-panel-content">
+        <mat-slide-toggle [checked]="entLightOn" (change)="onToggleEntLight($event)">Entrance Light</mat-slide-toggle>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="sub-panel">
+    <div class="sub-panel-content">
+        <mat-slide-toggle [checked]="hueGoOn" (change)="onToggleHueGo($event)">Hue Go Lights</mat-slide-toggle>
+    </div>
+    <div *ngIf="hueGoOn">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <mat-icon>wb_sunny</mat-icon>
+            <mat-slider [value]="hueGoBriValue" (input)="onSlideHueGoBri($event)" (change)="onSlideHueGoBriDone($event)"
+                min="0" max="254"></mat-slider>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <mat-icon>ac_unit</mat-icon>
+            <mat-slider [value]="hueGoCtValue" (input)="onSlideHueGoCt($event)" (change)="onSlideHueGoCtDone($event)"
+                min="153" max="500"></mat-slider>
+        </div>
+        <div style="margin-top: 10px;" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <mat-icon>palette_outline</mat-icon>
+            <div fxLayout="column" fxLayoutAlign=" center">
+                <div class="rgb-mat-slider">
+                    <mat-slider [value]="hueGoRgbValue" type="range" min="0" max="360" (input)="onSlideHueGoRgb($event)" (change)="onSlideHueGoRgbDone($event)"></mat-slider>
+                </div>
+                <div class="colour-picker"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="sub-panel">
+    <div class="sub-panel-content">
+        <mat-slide-toggle [checked]="airconOn" (change)="onToggleAircon($event)">Aircon</mat-slide-toggle>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="sub-panel">
+    <div class="sub-panel-content">
+        <div style="padding-bottom: 10px;">
+            <mat-label style="padding: 2px;">Fan</mat-label>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px">
+            <button mat-stroked-button style="font-weight: 400 !important;" (click)="onFanToggle()">On/Off</button>
+            <mat-button-toggle-group (change)="onFanSpeedChange($event)">
+                <mat-button-toggle style="padding: 0 2px;" value=1>1</mat-button-toggle>
+                <mat-button-toggle style="padding: 0 2px;" value=2>2</mat-button-toggle>
+                <mat-button-toggle style="padding: 0 2px;" value=3>3</mat-button-toggle>
+                <mat-button-toggle style="padding: 0 2px;" value=4>4</mat-button-toggle>
+            </mat-button-toggle-group>
+            <button mat-stroked-button style="font-weight: 400 !important;" (click)="onFanLightToggle()">Light</button>
+        </div>
+    </div>
+</div>
