@@ -1,0 +1,26 @@
+<div class="sub-panel">
+    <div class="sub-panel-content">
+        <mat-slide-toggle [checked]="hueBedroomOn" (change)="onToggleHueBedroom($event)">Strip Lights</mat-slide-toggle>
+    </div>
+    <div *ngIf="hueBedroomOn">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <mat-icon>wb_sunny</mat-icon>
+            <mat-slider [value]="hueBedroomBriValue" (input)="onSlideHueBedroomBri($event)" (change)="onSlideHueBedroomBriDone($event)"
+                min="0" max="254"></mat-slider>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <mat-icon>ac_unit</mat-icon>
+            <mat-slider [value]="hueBedroomCtValue" (input)="onSlideHueBedroomCt($event)" (change)="onSlideHueBedroomCtDone($event)"
+                min="153" max="500"></mat-slider>
+        </div>
+        <div style="margin-top: 10px;" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <mat-icon>palette_outline</mat-icon>
+            <div fxLayout="column" fxLayoutAlign=" center">
+                <div class="rgb-mat-slider">
+                    <mat-slider [value]="hueBedroomRgbValue" type="range" min="0" max="360" (input)="onSlideHueBedroomRgb($event)" (change)="onSlideHueBedroomRgbDone($event)"></mat-slider>
+                </div>
+                <div class="colour-picker"></div>
+            </div>
+        </div>
+    </div>
+</div>

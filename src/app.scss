@@ -1,0 +1,43 @@
+$mat-xxs: "only screen and (max-width: 400px)";
+$mat-xs: "only screen and (max-width: 599px)";
+$mat-sm: "only screen and (min-width: 600px) and (max-width: 959px)";
+$mat-md: "only screen and (min-width: 960px) and (max-width: 1279px)";
+$mat-lg: "only screen and (min-width: 1280px) and (max-width: 1919px)";
+$mat-xl: "only screen and (min-width: 1920px) and (max-width: 5000px)";
+$mat-lt-sm: "only screen and (max-width: 599px)";
+$mat-lt-md: 'only screen and (max-width: 959px)';
+$mat-lt-lg: "only screen and (max-width: 1279px)";
+$mat-lt-xl: "only screen and (max-width: 1919px)";
+$mat-gt-xs: "only screen and (min-width: 600px)";
+$mat-gt-sm: "only screen and (min-width: 960px)";
+$mat-gt-md: "only screen and (min-width: 1280px)";
+$mat-gt-xl: "only screen and (min-width: 1920px)";
+
+
+.sub-panel {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.sub-panel-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+mat-slider {
+    min-width: 500px;
+    @media #{$mat-lt-sm} {
+        min-width: 270px;
+    }
+}
+
+.colour-picker {
+    min-width: 484px;
+    @media #{$mat-lt-sm} {
+        min-width: 254px;
+    }
+    background-image: linear-gradient(to right, red, orange, yellow, lime, green,Turquoise,Cyan,Blue,Violet,Magenta,Crimson) !important;
+    height: 8px;
+    border-radius: 15px;
+    margin-top: -28px;
+}
